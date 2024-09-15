@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background:white;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto; /* Header, Nav, Content, Footer */
+    grid-template-columns: 100%;
+    min-height: 100vh; 
+}header {
+    background-color: #0d5caa; /* Adjust the background color */
+    padding: 10px 20px;
+    margin-bottom: 0;
+    grid-row: 1;
+
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr; /* 3-column layout */
+    align-items: center;
+    position: relative;
+}
+
+.logo-left img, .logo-right img {
+    width: 100px; /* Adjust as necessary */
+    height: auto;
+}
+
+.title h1 {
+    text-align: center;
+    color: white;
+    font-size: 40px; /* Adjust the font size as needed */
+    font-family: 'Pacifico', cursive; /* Use a cursive or script font */
+}
+
+.logo-left, .logo-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Navbar styles */
+nav {
+    grid-row: 2;
+    background-color: #003366;
+    margin-top: 0;
+    padding-top: 0;
+    position: sticky;
+    top: 0;  /* Sticks to the top of the viewport */
+    z-index: 1000;  /* Ensure it's above other content */
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+.navbar {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar li a {
+    display: block;
+    color: white; /* White text for links */
+    text-decoration: none;
+    font-size: 18px; /* Adjust the size */
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px; /* Block size for links */
+    text-align: center;
+}
+
+.navbar li a:hover {
+    background-color: #00509e; /* Slightly lighter blue on hover */
+    border-radius: 4px;
+}
+.menu-toggle {
+    display: none;
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+main {
+    grid-row: 3;
+    padding: 20px; /* Content padding */
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer {
+    grid-row: 4;
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+.menu-toggle {
+    display: none; /* Hidden by default on larger screens */
+    background-color: #00509e;
+    color: white;
+    border: none;
+    padding: 8px 12px; /* Smaller padding for a compact look */
+    cursor: pointer;
+    font-size: 16px; /* Slightly smaller text */
+    border-radius: 4px;
+    grid-column: 1; /* Align it to the left of the grid */
+    justify-self: start; /* Push it to the far left */
+    align-self: center; /* Push it to the far right */
+}
+
+@media (max-width: 768px) {
+    header {
+        position: sticky;
+        top: 0;  /* Sticks to the top of the viewport */
+        z-index: 1000;  /* Ensure it's above other content */
+        width: 100%;
+        box-shadow: 0 4px 2px -2px gray;  /* Optional: Add a shadow for better visibility */
+    }
+    .header-grid {
+        grid-template-columns: auto auto 1fr auto; /* 4-column layout */
+        grid-gap: 10px;
+    }
+
+    .title h1 {
+        font-size: 30px; /* Adjust font size for smaller screens */
+    }
+
+    .logo-left img, .logo-right img {
+        width: 50px; /* Adjust for smaller screens */
+    }
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed ;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Take up the full height of the viewport */
+        background-color: #003366;
+        padding-top: 70px; /* Space for the header */
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+    }
+    nav {
+        position: static;  /* Ensure nav does not overlap the fixed header */
+    }
+
+    .navbar li {
+        width: 100%;
+        padding: 15px;
+    }   
+
+    .navbar li a {
+        display: block;
+        width: 80%;
+        text-align: left;
+    }
+    .menu-toggle {
+        display: block; /* Visible in mobile view */
+        position: relative;
+        z-index: 1001; /* Keep the toggle button above the navbar */
+    }
+    body.menu-open {
+        overflow: hidden;
+    }
+    /* Show the sidebar when it's toggled */
+    .navbar.open {
+        transform: translateX(0); /* Slide in the navbar */
+    }
+}
+
+@media (max-width: 400px) {
+    .title h1 {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+}

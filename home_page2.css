@@ -1,0 +1,43 @@
+
+.map-container {
+    display: flex;               /* Use flexbox to align items */
+    justify-content: center;     /* Horizontally center the map */
+    align-items: center;         /* Vertically center if needed */
+    width: 100%;                 /* Full width of the container */
+    height: auto;                /* Auto height based on content */
+    padding: 0;                  /* No extra padding */
+    margin: 0;                   /* No margin */
+    position: relative;          /* Relative positioning for better control */
+}
+/* For general view (desktop screens) */
+.map-container svg {
+    width: 80%;                  /* Set width to 50% of the container for desktop */
+    height: auto;                /* Maintain aspect ratio */
+    display: block;              /* Block display ensures centering */
+    margin: 0 auto;
+    padding-left: 30%;
+}
+.land {
+    cursor: pointer;
+    fill: #d4d4d4; /* Default color */
+    stroke: #000;
+}
+.land:hover {
+    fill: #4287f5; /* Color when hovered */
+}
+@media (max-width: 768px) {
+    .map-container {
+        width: 100%;
+        height: auto;  /* Automatically adjust height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .map-container svg {
+        width: 100%;       /* Allow full width scaling */
+        height: auto;      /* Maintain aspect ratio */
+        max-height: 100vh;  /* Set max-height to 80% of viewport */
+        padding-left: 10%;   /* Remove any padding */
+    }
+}

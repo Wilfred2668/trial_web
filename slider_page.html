@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--Linking google fonts for icons-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="slider_page.css">
+        <!--slider sheet ref-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?v=1.0"/>
+        <link rel="stylesheet" href="head_tail.css">
+    </head>
+    <body>
+        <header>
+            <div class="header-grid">
+              <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+              <div class="logo-left">
+                  <img height="50px" width="80px" src="Flag_of_India.png" alt="Left Logo">
+              </div>
+              <div class="title">
+                  <h1>A Naan-Stop Heritage Cultures</h1>
+              </div>
+              <div class="logo-right">
+                  <img src="right-logo.png" alt="Right Logo">
+              </div>
+                
+            </div>
+        </header>
+        <nav>
+          <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Quizes</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </nav>
+        <main>
+            <div class="container swiper">
+                <div class="card-wrapper">
+                    <ul class="card-list swiper-wrapper">
+                        <li class="card-item swiper-slide">
+                            <a href="#" class="card-link" data-topic="landmark">
+                                <img src="landmark.jpg" alt="landmark image" class="card-image">
+                                <p class="badge landmark">Landmarks</p>
+                                <h2 class="card-title">
+                                    Explore iconic landmarks that tell stories of history and culture
+                                </h2>
+                                <button class="card-button material-symbols-rounded">
+                                    arrow_forward
+                                </button>
+                            </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <a href="#" class="card-link" data-topic="festival">
+                                <img src="festivals.webp" alt="people celebrating festival image" class="card-image">
+                                <p class="badge festivals">Festivals</p>
+                                <h2 class="card-title">
+                                    Celebrate life through festivals that unite hearts
+                                </h2>
+                                <button class="card-button material-symbols-rounded">
+                                    arrow_forward
+                                </button>
+                            </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <a href="#" class="card-link" data-topic="dance">
+                                <img src="traditional dance.webp" alt="people dancing image" class="card-image">
+                                <p class="badge dance">Traditional Dance</p>
+                                <h2 class="card-title">
+                                    Feel the rhythm of tradition in captivating dances
+                                </h2>
+                                <button class="card-button material-symbols-rounded">
+                                    arrow_forward
+                                </button>
+                            </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <a href="#" class="card-link" data-topic="Cuisine">
+                                <img src="food.webp" alt="food image" class="card-image">
+                                <p class="badge food">Cuisine</p>
+                                <h2 class="card-title">
+                                    Savor rich flavors that reflect culinary heritage
+                                </h2>
+                                <button class="card-button material-symbols-rounded">
+                                    arrow_forward
+                                </button>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="swiper-slide-button swiper-pagination"></div>
+                <div class="swiper-slide-button swiper-button-prev"></div>
+                <div class="swiper-slide-button swiper-button-next"></div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 Your Website. All rights reserved.</p>
+          </footer>
+                  
+          <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+          <script src="slider_page.js"></script>
+          <script src="head-tail.js"></script>
+    </body>
+</html>
